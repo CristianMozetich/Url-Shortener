@@ -11,7 +11,7 @@ export default function UrlForm() {
 
         const url = inputRef.current.value;
 
-        await fetch("http://localhost:3001/api/url", {
+        await fetch("https://url-shortener-2-z4nr.onrender.com/api/url", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -35,8 +35,8 @@ export default function UrlForm() {
         placeholder="url"
       />
       <button className="m-2 p-1 bg-blue-500 text-white rounded-lg">ACORTA</button>
-      <Link href={`http://localhost:3001/api/url/${shortUrl}`}>
-        http://localhost:3001/api/url/{shortUrl}
+      <Link href={`https://url-shortener-2-z4nr.onrender.com/api/url/${shortUrl}`}>
+        https://url-shortener-2-z4nr.onrender.com/api/url/{shortUrl}
       </Link>
     </form>
   );
