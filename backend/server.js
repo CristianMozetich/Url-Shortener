@@ -10,7 +10,7 @@ const PORT = 3001;
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Reemplaza esto con la URL de tu aplicación frontend
+    origin: 'http://localhost:3002', // Reemplaza esto con la URL de tu aplicación frontend
     methods: ['GET', 'POST'], // Métodos permitidos
     allowedHeaders: ['Content-Type'], // Encabezados permitidos
   }));
