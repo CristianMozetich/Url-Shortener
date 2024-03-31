@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     res.send('Acortador Url backend')
 })
 
-app.use('/api', urlRouter);
+app.use('/', urlRouter);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
