@@ -11,7 +11,7 @@ export default function UrlForm() {
 
         const url = inputRef.current.value;
 
-        await fetch("https://url-shortener-2-z4nr.onrender.com/api/url", {
+        await fetch("https://url-shortener-2-z4nr.onrender.com/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -27,6 +27,10 @@ export default function UrlForm() {
     }
     
   return (
+    <>
+    <div className="mt-10">
+      <h5 className="font-bold text-lg">Acortador Aleatorio</h5>
+    </div>
     <form className="grid justify-center m-2 p-2" onSubmit={handleSubmit}>
       <input
         ref={inputRef}
@@ -35,9 +39,10 @@ export default function UrlForm() {
         placeholder="url"
       />
       <button className="m-2 p-1 bg-blue-500 text-white rounded-lg">ACORTA</button>
-      <Link href={`https://url-shortener-2-z4nr.onrender.com/api/url/${shortUrl}`}>
-        https://url-shortener-2-z4nr.onrender.com/api/url/{shortUrl}
+      <Link href={`https://url-shortener-2-z4nr.onrender.com/${shortUrl}`}>
+        https://url-shortener-2-z4nr.onrender.com/{shortUrl}
       </Link>
     </form>
+    </>
   );
 }
