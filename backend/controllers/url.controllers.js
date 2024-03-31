@@ -32,3 +32,21 @@ export const getUrlShort = async (req, res) => {
         res.status(500).json({ message: 'Internal Server Error' });
     }
 };
+
+export const customUrlShortener = async (req, res) => {
+    const { url, customName } = req.body
+
+    try{
+        const existigUrl = await UrlModel.findOne({ shortUrl: customName });
+
+        if(existigUrl){
+            res.status(400).send({error: 'Url existente en la base de datos'});
+        }
+
+        const data = await UrlModel.create({ url, shortUrl: customName });
+
+        res.status(200).send({ data });
+    }catch (error) {
+        res.status(500).send({ error: error.message });
+    }
+}
