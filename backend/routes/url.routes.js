@@ -5,6 +5,6 @@ const urlRouter = Router();
 
 urlRouter.post('/', urlShortener)
 urlRouter.get('/:shortId', getUrlShort)
-urlRouter.post('/', customUrlShortener)
+urlRouter.post('/custom', customUrlShortener)
 
 export default urlRouter
