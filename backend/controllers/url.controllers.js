@@ -37,7 +37,7 @@ export const customUrlShortener = async (req, res) => {
     const { url, customName } = req.body
 
     try{
-        const existigUrl = await UrlModel.findOne({ shortUrl: customName });
+        const existigUrl = await UrlModel.create({ shortUrl: customName });
 
         if(existigUrl){
             res.status(400).send({error: 'Url existente en la base de datos'});
