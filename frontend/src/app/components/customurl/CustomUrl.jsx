@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
+
 export default function CustomUrl() {
     const urlRef = useRef(); 
     const customNameRef = useRef();
@@ -24,8 +25,7 @@ export default function CustomUrl() {
             urlRef.current.value = "";
             customNameRef.current.value = "";
         })
-
-
+        console.log(customUrl)
     }
 
   return (
