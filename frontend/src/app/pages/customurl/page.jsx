@@ -32,8 +32,8 @@ export default function CustomUrl() {
   return (
     
     <>
-      <div className="mt-10">
-        <h5 className="font-bold text-lg">Acortador Customizable</h5>
+      <div className="mt-10 text-center">
+        <h5 className="font-bold text-lg tracking-wide">Acortador Customizable</h5>
       </div>
       <form onSubmit={handleSubmit} className="grid justify-center m-2 p-2">
         <input
@@ -50,11 +50,14 @@ export default function CustomUrl() {
         />
         <button className="m-2 p-1 bg-blue-500 text-white rounded-lg">ACORTA</button>
         <Link href={`https://url-shortener-2-z4nr.onrender.com/${customUrl}`}>
-        </Link>
         <span>
           https://url-shortener-2-z4nr.onrender.com/{customUrl}
         </span>
+        </Link>
       </form>
+      <div className="text-center">
+        <Link className="text-blue-500" href={"/"}>Volver al inicio</Link>
+      </div>
     </>
   );
 }
