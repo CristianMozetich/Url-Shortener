@@ -15,7 +15,7 @@ const Info = () => {
           </p>
         </div>
         <div className="p-2 flex justify-center items-center flex-col">
-          <div className="max-w-1/2 md:w-96 max-h-screen border-2 border-solid m-2 p-2 rounded-lg">
+          <div className="max-w-1/2 md:w-96 max-h-screen border-2 border-solid border-violet-300 m-3 p-3 rounded-lg">
             <Link
               className="text-3xl font-bold tracking-wider"
               href={"/pages/urlform"}
@@ -27,7 +27,7 @@ const Info = () => {
               aleatoria
             </p>
           </div>
-          <div className="max-w-1/2 md:w-96 max-h-screen border-2 border-solid m-2 p-2 rounded-lg">
+          <div className="max-w-1/2 md:w-96 max-h-screen border-2 border-solid m-3 p-3 border-violet-300 rounded-lg">
             <Link
               className="text-3xl font-bold tracking-wider"
               href={"/pages/customurl"}
