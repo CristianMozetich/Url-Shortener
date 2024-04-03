@@ -1,5 +1,5 @@
 import express from "express";
-import urlRouter from "./routes/url.routes.js";
+import router from "./routes/index.routes.js";
 import cors from "cors";
 import 'dotenv/config';
 import mongoose from "mongoose";
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     res.send('Acortador Url backend')
 })
 
-app.use('/', urlRouter);
+app.use('/', router);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
