@@ -32,7 +32,7 @@ export default function CustomUrl() {
   return (
     <>
       <div className="mt-10 text-center">
-        <h5 className="font-bold text-2xl tracking-wide">
+        <h5 className="font-bold text-5xl tracking-wide">
           Acortador de enlaces customizable
         </h5>
       </div>
@@ -56,7 +56,7 @@ export default function CustomUrl() {
           CORTAR
         </button>
       </form>
-      <div className="text-center">
+      <div className="text-center m-4 p-4">
         <Link
           className="text-blue-500 hover:text-blue-800 cursor-pointer font-bold text-2xl"
           href={`https://url-shortener-2-z4nr.onrender.com/${customUrl}`}
