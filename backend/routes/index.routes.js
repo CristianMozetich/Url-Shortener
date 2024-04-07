@@ -5,6 +5,6 @@ import sessionRouter from "./sessions.routes.js";
 const router = Router();
 
 router.use("/", urlController);
-router.use("/", sessionRouter);
+router.use("/sessions", sessionRouter);
 
 export default router
