@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import RegistroForm from "../../components/RegistroForm/RegistroForm";
@@ -10,8 +11,7 @@ const Registro = () => {
           width={400}
           height={300}
           src={"/img/montaña2.jpeg"}
-          alt={"Image login"}
-          priority
+          alt={"Imagen registro"}
         />
       </picture>
       <RegistroForm />
