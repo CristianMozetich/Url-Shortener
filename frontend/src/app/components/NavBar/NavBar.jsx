@@ -19,6 +19,7 @@ const NavBar = () => {
           </svg>
         </div>
         <div className="flex gap-2 m-3">
+          <Link href={"/pages/prices"}>Precios</Link>
           <Link href={"/pages/login"}>Login</Link>
           <Link href={"/pages/registro"}>Registro</Link>
         </div>
