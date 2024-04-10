@@ -2,6 +2,7 @@
 import React from "react";
 import { useRef } from "react";
 import { ValidationForm } from "./validation.js";
+import Image from "next/image";
 
 const RegistroForm = () => {
   const formRef = useRef(null);
@@ -9,50 +10,60 @@ const RegistroForm = () => {
 
   return (
     <div>
+      <div className="flex justify-center m-4 p-2">
+        <picture>
+          <Image
+            width={50}
+            height={60}
+            src={"/img/enlace.png"}
+            alt={"Imagen registro"}
+          />
+        </picture>
+      </div>
       <form
         onSubmit={handleSubmit}
         ref={formRef}
-        className="grid justify-center m-2"
+        className="flex flex-col items-center justify-center m-2"
       >
         <input
-          className="max-w-96 h-9 m-2 p-2 border-2 border-solid border-green-300 rounded-md"
+          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Nombre y Apellido(*)"
           name="username"
         />
         <input
-          className="max-w-96 h-9 m-2 p-2 border-2 border-solid border-green-300 rounded-md"
+          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Email(*)"
           name="email"
         />
         <input
-          className="max-w-96 h-9 m-2 p-2 border-2 border-solid border-green-300 rounded-md"
+          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Contraseña(*)"
           name="password"
         />
         <input
-          className="max-w-96 h-9 m-2 p-2 border-2 border-solid border-green-300 rounded-md"
+          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Repetir Contraseña(*)"
           name="repeatPassword"
         />
         <input
-          className="max-w-96 m-2 h-9 p-2 border-2 border-solid border-green-300 rounded-md"
+          className="w-72 m-2 h-12 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Telefono(*)"
           name="phone"
         />
         <input
-          className="max-w-96 h-9 m-2 p-2 border-2 border-solid border-green-300 rounded-md"
+          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Domicilio(*)"
           name="address"
         />
         <button
           type="submit"
-          className="m-2 p-1 bg-blue-500 text-white rounded-lg"
+          className="m-2 p-1 bg-blue-500 text-white rounded-lg w-32 h-9 hover:bg-blue-900 transition-all"
         >
           Registrarme
         </button>

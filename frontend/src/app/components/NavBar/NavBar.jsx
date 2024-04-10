@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="flex justify-between bg-slate-800 text-white">
         <div className="flex">
           <Link href={"/"} className="font-bold text-2xl text-center m-3 tracking-wider">
-            Simple URL
+            Simple Link
           </Link>
           <svg
             className="w-9 h-23"

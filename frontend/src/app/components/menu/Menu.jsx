@@ -2,7 +2,7 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <div className="w-1/2 m-4 p-4">
+    <div className="w-1/2 m-2 p-2">
       <p className="text-xl">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
         iste ea voluptates perspiciatis laudantium eligendi porro dolorem earum
