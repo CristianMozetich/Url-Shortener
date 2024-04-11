@@ -1,4 +1,16 @@
+"use client";
+
 export default function Prices() {
+  const onClick = async () => {
+    const response = await fetch(
+      "https://url-shortener-2-z4nr.onrender.com/payment/checkout-session",
+      {
+        method: "POST",
+      }
+    );
+    const data = await response.json();
+    window.location.href = data.url;
+  };
   return (
     <>
       <div className="h-screen">
@@ -54,7 +66,7 @@ export default function Prices() {
               <tr className="flex flex-col">
                 <td className="text-center text-2xl font-bold">Básico</td>
                 <td className="text-center text-6xl font-bold text-blue-800">
-                  1 Є
+                  2 Є
                 </td>
               </tr>
             </thead>
@@ -85,7 +97,10 @@ export default function Prices() {
               </tr>
               <tr>
                 <td className="text-center">
-                  <button className="p-3 m-3 bg-blue-500 text-white rounded-lg">
+                  <button
+                    onClick={onClick}
+                    className="p-3 m-3 bg-blue-500 text-white rounded-lg"
+                  >
                     Suscribirse
                   </button>
                 </td>
