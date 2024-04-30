@@ -5,7 +5,7 @@ import Menu from "../menu/Menu";
 const Info = () => {
   return (
     <>
-      <div className="flex flex-wrap justify-center items-center">
+      <div className="flex flex-wrap flex-col h-screen justify-center items-center">
         <Menu />
         <div className="flex-col w-1/2 mb-8 m-4 flex flex-wrap items-center border-2 border-solid bg-sky-100  p-6 rounded-lg shadow-lg shadow-sky-400">
           <Link
