@@ -2,12 +2,11 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <div className="w-1/2 m-2 p-2">
-      <p className="text-xl">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus
-        iste ea voluptates perspiciatis laudantium eligendi porro dolorem earum
-        aut ducimus temporibus ut optio doloribus molestiae mollitia, veniam
-        cupiditate dolorum aspernatur?
+    <div className="w-1/2 mt-6 mb-6 p-6">
+      <p className="text-2xl tracking-wider">
+        <span className="font-semibold">¡Bienvenido a nuestro acortador de enlaces!</span> Simplifica tus URLs largas
+        en enlaces cortos y fáciles de compartir. Con nuestra herramienta,
+        podrás comprimir tus enlaces de manera <span className="border-b-2 border-solid border-sky-700">rápida y segura.</span>
       </p>
     </div>
   );

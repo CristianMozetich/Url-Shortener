@@ -65,7 +65,7 @@ export default function CustomUrl() {
         </Link>
       </div>
       <div className="text-center m-2 absolute bottom-10 right-10">
-        <Link className="text-green-800 text-lg" href={"/"}>
+        <Link className="text-sky-500 text-sm" href={"/"}>
           Volver al inicio
         </Link>
       </div>

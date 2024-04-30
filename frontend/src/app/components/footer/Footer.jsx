@@ -1,9 +1,28 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-96 bg-slate-800">
-      <div></div>
+    <footer className="w-full h-96 bg-slate-950 text-white">
+      <div className="flex justify-center items-center gap-4 p-6">
+        <span className="font-bold text-2xl">Simple Link</span>
+        <Image
+          width={50}
+          height={60}
+          src={"/img/enlace.png"}
+          alt={"Imagen registro"}
+        />
+      </div>
+      <div className="flex justify-center gap-4">
+        <Link className="text-lg" href={"/pages/prices"}>Precios</Link>
+        <Link className="text-lg" href={"/pages/login"}>Login</Link> 
+        <Link className="text-lg" href={"/pages/register"}>Registro</Link>
+      </div>
+      <div className="flex items-center flex-col p-6">
+        <span className="text-sm">Todos los derechos reservados</span>
+        <span>Desarrollado por <Link target="_blank" className="text-teal-200" href={"https://github.com/CristianMozetich"}>Cristian Mozetich.</Link></span>
+      </div>
     </footer>
   );
 };
