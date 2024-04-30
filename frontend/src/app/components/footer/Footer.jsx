@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-96 bg-slate-950 text-white">
+    <footer className="w-full bg-slate-950 text-white">
       <div className="flex justify-center items-center gap-4 p-6">
         <span className="font-bold text-2xl">Simple Link</span>
         <Image
@@ -15,9 +15,9 @@ const Footer = () => {
         />
       </div>
       <div className="flex justify-center gap-4">
-        <Link className="text-lg" href={"/pages/prices"}>Precios</Link>
-        <Link className="text-lg" href={"/pages/login"}>Login</Link> 
-        <Link className="text-lg" href={"/pages/register"}>Registro</Link>
+        <Link className="text-lg hover:text-sky-500 transition-all" href={"/pages/prices"}>Precios</Link>
+        <Link className="text-lg hover:text-sky-500 transition-all" href={"/pages/login"}>Login</Link> 
+        <Link className="text-lg hover:text-sky-500 transition-all" href={"/pages/registro"}>Registro</Link>
       </div>
       <div className="flex items-center flex-col p-6">
         <span className="text-sm">Todos los derechos reservados</span>

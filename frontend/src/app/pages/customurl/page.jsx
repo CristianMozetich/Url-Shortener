@@ -30,15 +30,15 @@ export default function CustomUrl() {
   };
 
   return (
-    <>
-      <div className="mt-10 text-center">
+    <div className="h-screen flex flex-col items-center justify-center">
+      <div className="text-center">
         <h5 className="font-bold text-5xl tracking-wide">
           Acortador de enlaces customizable
         </h5>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-wrap flex-col justify-center m-2 p-2 w-screen"
+        className="flex flex-wrap flex-col justify-center items-center m-2 p-2 w-screen"
       >
         <input
           ref={urlRef}
@@ -64,11 +64,6 @@ export default function CustomUrl() {
           https://url-shortener-2-z4nr.onrender.com/{customUrl}
         </Link>
       </div>
-      <div className="text-center m-2 absolute bottom-10 right-10">
-        <Link className="text-sky-500 text-sm" href={"/"}>
-          Volver al inicio
-        </Link>
-      </div>
-    </>
+    </div>
   );
 }

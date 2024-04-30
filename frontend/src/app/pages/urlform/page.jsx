@@ -25,8 +25,8 @@ export default function UrlForm() {
   };
 
   return (
-    <>
-      <div className="mt-10 text-center">
+    <div className="h-screen flex flex-col justify-center items-center">
+      <div className="text-center">
         <h5 className="font-bold tracking-wide text-4xl">
           Acortador de enlaces aleatorio
         </h5>
@@ -53,11 +53,6 @@ export default function UrlForm() {
           https://url-shortener-2-z4nr.onrender.com/{shortUrl}
         </Link>
       </div>
-      <div className="text-center m-2 absolute bottom-10 right-10">
-        <Link className="text-sky-500 text-sm" href={"/"}>
-          Volver al inicio
-        </Link>
-      </div>
-    </>
+    </div>
   );
 }

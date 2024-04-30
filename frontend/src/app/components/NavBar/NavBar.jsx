@@ -8,11 +8,11 @@ const NavBar = () => {
         <div className="flex">
           <Link
             href={"/"}
-            className="font-bold flex gap-4 text-2xl text-center m-2 ml-8 tracking-wider"
+            className="font-bold hover:text-sky-500 transition-all flex gap-4 text-2xl text-center m-2 ml-8 tracking-wider"
           >
             Simple Link
             <svg
-              className="w-9 h-23"
+              className="w-9 h-23 hover:currentColor"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 640 512"
               fill="white"
@@ -21,10 +21,10 @@ const NavBar = () => {
             </svg>
           </Link>
         </div>
-        <div className="flex gap-2 items-center mr-4">
-          <Link href={"/pages/prices"}>Precios</Link>
-          <Link href={"/pages/login"}>Login</Link>
-          <Link href={"/pages/registro"}>Registro</Link>
+        <div className="flex gap-4 items-center mr-8">
+          <Link className="text-md hover:text-sky-500 transition-all" href={"/pages/prices"}>Precios</Link>
+          <Link className="text-md hover:text-sky-500 transition-all" href={"/pages/login"}>Login</Link>
+          <Link className="text-md hover:text-sky-500 transition-all" href={"/pages/registro"}>Registro</Link>
         </div>
       </div>
     </>
