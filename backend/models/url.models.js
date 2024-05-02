@@ -8,7 +8,7 @@ const urlSchema = new Schema({
     shortUrl: {
         type: String,
         required: true
-    }
+    },
 })
 
 export const UrlModel = model("Url", urlSchema)
