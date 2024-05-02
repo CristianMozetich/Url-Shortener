@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/footer/Footer";
+import ContextProvider from "./context/ContextProvider";
 import "./globals.css";
 
 const openSans = Open_Sans({ subsets: ["latin"], weight: ["400", "700"] });
@@ -17,12 +18,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={openSans.className}>
-        <NavBar/>
-        {children}
-        <Footer/>
-      </body>
-    </html>
+    <ContextProvider>
+      <html lang="en">
+        <body className={openSans.className}>
+          <NavBar />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ContextProvider>
   );
 }

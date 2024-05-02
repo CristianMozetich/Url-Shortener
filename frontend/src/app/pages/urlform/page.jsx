@@ -15,7 +15,7 @@ export default function UrlForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url, userId }),
     })
       .then((res) => res.json())
       .then((data) => {
