@@ -4,7 +4,7 @@ import { UserModel } from "../models/user.models.js";
 
 
 export const urlShortener = async (req, res) => {
-  const { url, userId } = req.body;
+  const { url } = req.body;
 
   try {
     const shortUrl = Math.random().toString(36).substring(2, 5);
@@ -12,15 +12,6 @@ export const urlShortener = async (req, res) => {
     // Crear una nueva URL acortada
     const newUrl = await UrlModel.create({ url, shortUrl });
 
-    // Buscar al usuario por su ID
-    const user = await UserModel.findById(userId);
-    if (!user) {
-      return res.status(404).send({ error: "Usuario no encontrado" });
-    }
-
-    // Agregar la URL acortada al array de shortenedUrls del usuario
-    user.shortenedUrls.push(newUrl);
-    await user.save();
 
     res.status(200).send({ data: newUrl });
   } catch (error) {
