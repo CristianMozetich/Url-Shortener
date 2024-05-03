@@ -7,9 +7,9 @@ const Info = () => {
     <>
       <div className="flex flex-wrap flex-col h-screen justify-center items-center">
         <Menu />
-        <div className="flex-col w-1/2 mb-8 m-34 flex flex-wrap items-center border-2 border-solid bg-sky-100  p-6 rounded-lg shadow-md shadow-sky-400">
+        <div className="flex-col w-1/2 mb-8 m-34 flex flex-wrap items-center  bg-slate-200  p-6 rounded-lg shadow-md shadow-slate-900">
           <Link
-            className="text-3xl p-2 text-center font-bold tracking-wider hover:translate-x-1 transition-all hover:text-sky-800"
+            className="text-3xl p-2 text-center font-bold tracking-wider hover:translate-x-1 transition-all text-teal-700"
             href={"/pages/urlform"}
           >
             Acortador de Link Aleatorio
@@ -19,9 +19,9 @@ const Info = () => {
             aleatoria
           </p>
         </div>
-        <div className="shadow-teal-400 flex-col w-1/2 mb-8 flex-wrap flex items-center m-4 border-2 border-solid p-6 bg-teal-100 rounded-lg shadow-md">
+        <div className="shadow-slate-900 flex-col w-1/2 mb-8 flex-wrap flex items-center m-4  p-6 bg-slate-200 rounded-lg shadow-md">
           <Link
-            className="text-3xl font-bold text-center tracking-wider p-2 hover:translate-x-1 transition-all hover:text-teal-800"
+            className="text-3xl font-bold text-center tracking-wider p-2 hover:translate-x-1 transition-all text-teal-700"
             href={"/pages/customurl"}
           >
             Acortador de Link Customizable

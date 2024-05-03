@@ -1,11 +1,13 @@
 "use client";
 import { useState, useRef } from "react";
 import Link from "next/link";
-
+import { useContext } from "react";
+import { context } from "@/app/context/ContextProvider";
 export default function CustomUrl() {
   const urlRef = useRef();
   const customNameRef = useRef();
   const [customUrl, setCustomUrl] = useState("");
+  const { userId } = useContext(context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ export default function CustomUrl() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ url, customName }),
+      body: JSON.stringify({ url, customName, userId }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -27,6 +29,7 @@ export default function CustomUrl() {
         customNameRef.current.value = "";
       });
     console.log(customUrl);
+
   };
 
   return (

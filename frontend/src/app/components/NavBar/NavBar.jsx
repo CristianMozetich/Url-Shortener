@@ -4,11 +4,11 @@ import Link from "next/link";
 const NavBar = () => {
   return (
     <>
-      <div className="flex justify-between bg-slate-900 text-white shadow-md">
+      <div className="flex justify-between bg-teal-950 text-white shadow-md">
         <div className="flex">
           <Link
             href={"/"}
-            className="font-bold hover:text-white text-sky-300 transition-all flex gap-4 text-2xl text-center m-2 ml-8 tracking-wider"
+            className="font-bold hover:text-white  transition-all flex gap-4 text-2xl text-center m-2 ml-8 tracking-wider"
           >
             Simple Link
             <svg

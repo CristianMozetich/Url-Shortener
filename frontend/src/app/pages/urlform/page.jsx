@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, useRef } from "react";
+
 export default function UrlForm() {
   const inputRef = useRef();
   const [shortUrl, setShortUrl] = useState("");
@@ -15,7 +16,7 @@ export default function UrlForm() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ url, userId }),
+      body: JSON.stringify({ url }),
     })
       .then((res) => res.json())
       .then((data) => {

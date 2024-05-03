@@ -4,7 +4,7 @@ import { context } from "@/app/context/ContextProvider";
 import { useContext } from "react";
 export const FetchLogin = () => {
   const router = useRouter();
-  const { decodeToken } = useContext(context);
+  const { decodeToken, setUserId } = useContext(context);
   const handlesubmit = async (e) => {
     e.preventDefault();
 
@@ -26,6 +26,8 @@ export const FetchLogin = () => {
       const datos = await response.json();
       const decodeDatos = decodeToken(datos.token)
       console.log(decodeDatos);
+      setUserId(decodeDatos.user._id);
+      console.log(decodeDatos.user._id)
       e.target.reset();
       router.push("/");
     }

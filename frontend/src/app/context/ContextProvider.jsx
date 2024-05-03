@@ -19,7 +19,7 @@ export default function ContextProvider({ children }) {
     }
 
     return (
-        <context.Provider value={{ userId, decodeToken }}>
+        <context.Provider value={{ userId, decodeToken, setUserId }}>
             {children}
         </context.Provider>
     )
