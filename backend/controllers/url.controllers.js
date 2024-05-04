@@ -1,8 +1,6 @@
 import { UrlModel } from "../models/url.models.js";
 import { UserModel } from "../models/user.models.js";
 
-
-
 export const urlShortener = async (req, res) => {
   const { url } = req.body;
 
@@ -12,13 +10,11 @@ export const urlShortener = async (req, res) => {
     // Crear una nueva URL acortada
     const newUrl = await UrlModel.create({ url, shortUrl });
 
-
     res.status(200).send({ data: newUrl });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
 };
-
 
 export const getUrlShort = async (req, res) => {
   try {
@@ -56,6 +52,23 @@ export const customUrlShortener = async (req, res) => {
     await user.save();
 
     res.status(200).send({ data });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+};
+
+export const getUrls = async (req, res) => {
+  const { userId } = req.body;
+  try {
+    const user = await UserModel.findById(userId);
+
+    if(!user){
+      return res.status(404).send({ error: "Usuario no encontrado" });
+    }
+
+    const urls = user.shortenedUrls;
+
+    res.status(200).send({ data: urls });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
