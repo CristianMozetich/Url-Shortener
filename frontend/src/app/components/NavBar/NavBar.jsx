@@ -21,6 +21,9 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="flex gap-4 items-center mr-8">
+          <Link href={"/pages/urls"} className="text-md hover:text-sky-500 transition-all">
+            Urls
+          </Link>
           <Link
             className="text-md hover:text-sky-500 transition-all"
             href={"/pages/prices"}
@@ -39,6 +42,7 @@ const NavBar = () => {
           >
             Registro
           </Link>
+
         </div>
       </div>
     </>
