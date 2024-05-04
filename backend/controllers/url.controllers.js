@@ -68,7 +68,7 @@ export const getUrls = async (req, res) => {
 
     const urls = user.shortenedUrls;
 
-    res.status(200).send({ data: urls });
+    res.status(200).json({ data: urls });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
