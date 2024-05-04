@@ -6,6 +6,6 @@ const urlRouter = Router();
 urlRouter.post('/', urlShortener)
 urlRouter.get('/:shortId', getUrlShort)
 urlRouter.post('/custom', customUrlShortener)
-urlRouter.get('/urls', getUrls)
+urlRouter.get('/urls/:userId', getUrls)
 
 export default urlRouter
