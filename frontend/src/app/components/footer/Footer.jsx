@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex justify-center items-center gap-4 p-6">
         <span className="font-bold text-2xl">Simple Link</span>
         <Image
-          width={50}
+          width={40}
           height={60}
           src={"/img/enlace.png"}
           alt={"Imagen registro"}
@@ -21,7 +21,7 @@ const Footer = () => {
       </div>
       <div className="flex items-center flex-col p-6">
         <span className="text-sm">Todos los derechos reservados</span>
-        <span>Desarrollado por <Link target="_blank" className="text-teal-200" href={"https://github.com/CristianMozetich"}>Cristian Mozetich.</Link></span>
+        <span>Desarrollado por <Link target="_blank" className="text-slate-300" href={"https://github.com/CristianMozetich"}>Cristian Mozetich.</Link></span>
       </div>
     </footer>
   );

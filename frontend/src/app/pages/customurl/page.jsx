@@ -3,33 +3,50 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { useContext } from "react";
 import { context } from "@/app/context/ContextProvider";
+
 export default function CustomUrl() {
   const urlRef = useRef();
   const customNameRef = useRef();
   const [customUrl, setCustomUrl] = useState("");
   const { userId } = useContext(context);
+  const [errorLogin, setErrorLogin] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Verificar si el usuario está logueado
+    if (!userId) {
+      setErrorLogin(true);
+      return;
+    }
+
     const url = urlRef.current.value;
     const customName = customNameRef.current.value;
 
-    await fetch(`https://url-shortener-2-z4nr.onrender.com/custom`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ url, customName, userId }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setCustomUrl(data.data.shortUrl);
-        urlRef.current.value = "";
-        customNameRef.current.value = "";
-      });
-    console.log(customUrl);
+    try {
+      const response = await fetch(
+        `https://url-shortener-2-z4nr.onrender.com/custom`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url, customName, userId }),
+        }
+      );
 
+      if (!response.ok) {
+        throw new Error("Error al acortar el enlace");
+      }
+
+      const data = await response.json();
+      setCustomUrl(data.data.shortUrl);
+      urlRef.current.value = "";
+      customNameRef.current.value = "";
+      setErrorLogin(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -60,12 +77,19 @@ export default function CustomUrl() {
         </button>
       </form>
       <div className="text-center m-4 p-4">
-        <Link
-          className="text-blue-500 hover:text-blue-800 cursor-pointer font-bold text-2xl"
-          href={`https://url-shortener-2-z4nr.onrender.com/${customUrl}`}
-        >
-          https://url-shortener-2-z4nr.onrender.com/{customUrl}
-        </Link>
+        {errorLogin && (
+          <span className="text-red-500 text-2xl">
+            Debes estar registrado y logueado para obtener el enlace customizado
+          </span>
+        )}
+        {customUrl && (
+          <Link
+            className="text-blue-500 hover:text-blue-800 cursor-pointer font-bold text-2xl"
+            href={`https://url-shortener-2-z4nr.onrender.com/${customUrl}`}
+          >
+            https://url-shortener-2-z4nr.onrender.com/{customUrl}
+          </Link>
+        )}
       </div>
     </div>
   );
