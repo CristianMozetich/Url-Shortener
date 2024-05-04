@@ -58,7 +58,7 @@ export const customUrlShortener = async (req, res) => {
 };
 
 export const getUrls = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.params;
   try {
     const user = await UserModel.findById(userId);
 
