@@ -11,7 +11,7 @@ export default function Urls() {
     e.preventDefault();
 
     try {
-      const data = await fetch(
+      const customUrls = await fetch(
         `https://url-shortener-2-z4nr.onrender.com/urls/${userId}`,
         {
           method: "GET",
@@ -20,23 +20,36 @@ export default function Urls() {
           },
         }
       ).then((res) => res.json());
-      const urlsData = Array.isArray(data) ? data : [data];
+
       // Actualizar el estado con los datos recibidos
-      setUrls(urlsData);
-      console.log(urlsData);
+      setUrls(customUrls.data);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <form className="h-screen flex flex-col justify-center items-center">
-      <button onClick={handleSubmit}>Get Urls</button>
-      <ul>
-        {urls.map((url) => (
-          <li key={url._id}>{url.shortUrl}</li>
-        ))}
-      </ul>
-    </form>
+    <div className="h-screen flex flex-col items-center">
+      <h1 className="text-3xl mt-20 font-bold">Accede a tus URLs</h1>
+      <form className="m-4">
+        <button
+          className="text-2xl font bold bg-blue-500 text-white w-32 h-12 rounded-lg shadow-md shadow-slate-500 m-2 p-2"
+          onClick={handleSubmit}
+        >
+          Mis Urls
+        </button>
+        <ul>
+          {urls.map((item) => (
+            <li className="m-2 p-1" key={item._id}>
+              <span>
+                <a className="text-lg" href={item.url}>
+                  {item.shortUrl}
+                </a>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </form>
+    </div>
   );
 }

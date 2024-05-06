@@ -4,7 +4,7 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 const Login = () => {
   return (
     <div className="grid items-center justify-items-center lg:grid-cols-2 lg:overflow-hidden">
-      <div className="bg-green-900 h-screen flex justify-center items-center flex-col">
+      <div className="bg-emerald-950 h-screen flex justify-center items-center flex-col">
         <h1 className="text-center text-6xl font-bold text-white m-4 p-4 tracking-wider">
           Bienvenido nuevamente!
         </h1>

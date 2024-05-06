@@ -3,7 +3,7 @@ import React from "react";
 const Menu = () => {
   return (
     <div className="w-3/4 mb-6 p-6 flex flex-col">
-      <span className="font-semibold text-5xl m-2 p-2">
+      <span className="font-semibold text-5xl m-2 mt-20 p-2">
         ¡Bienvenido a nuestro acortador de enlaces!
       </span>
         <span className="text-xl tracking-wider">
