@@ -11,7 +11,7 @@ export default function UrlForm() {
 
     const url = inputRef.current.value;
 
-    await fetch("https://url-shortener-2-z4nr.onrender.com/", {
+    await fetch("https://simple-link-five.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,9 +49,9 @@ export default function UrlForm() {
       <div className="text-center m-4 p-4">
         <Link
           className="text-blue-500 hover:text-blue-800 cursor-pointer font-bold text-2xl"
-          href={`https://url-shortener-2-z4nr.onrender.com/${shortUrl}`}
+          href={`https://simple-link-five.vercel.app/${shortUrl}`}
         >
-          https://url-shortener-2-z4nr.onrender.com/{shortUrl}
+          https://simple-link-five.vercel.app/{shortUrl}
         </Link>
       </div>
     </div>

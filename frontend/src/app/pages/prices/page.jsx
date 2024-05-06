@@ -3,7 +3,7 @@
 export default function Prices() {
   const onClick = async () => {
     const response = await fetch(
-      "https://url-shortener-2-z4nr.onrender.com/payment/checkout-session",
+      "https://simple-link-five.vercel.app/payment/checkout-session",
       {
         method: "POST",
       }

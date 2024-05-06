@@ -16,7 +16,7 @@ export const ValidationForm = () => {
     }
 
     const response = await fetch(
-      "https://url-shortener-2-z4nr.onrender.com/sessions/register",
+      "https://simple-link-five.vercel.app/sessions/register",
       {
         method: "POST",
         headers: {

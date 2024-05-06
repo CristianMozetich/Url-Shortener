@@ -12,7 +12,7 @@ export default function Urls() {
 
     try {
       const customUrls = await fetch(
-        `https://url-shortener-2-z4nr.onrender.com/urls/${userId}`,
+        `https://simple-link-five.vercel.app/urls/${userId}`,
         {
           method: "GET",
           headers: {

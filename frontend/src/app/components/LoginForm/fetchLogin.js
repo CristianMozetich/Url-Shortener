@@ -13,7 +13,7 @@ export const FetchLogin = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     const response = await fetch(
-      "https://url-shortener-2-z4nr.onrender.com/sessions/login",
+      "https://simple-link-five.vercel.app/sessions/login",
       {
         method: "POST",
         headers: {
