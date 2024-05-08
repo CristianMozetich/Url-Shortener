@@ -12,11 +12,11 @@ export default function Prices() {
     window.location.href = data.url;
   };
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
+    <div className="flex flex-col mt-12 justify-center items-center">
       <div className="m-4 p-4">
         <h1 className="text-center text-6xl font-bolder">Planes</h1>
       </div>
-      <div className="flex justify-items-center">
+      <div className="flex justify-center flex-wrap">
         <table className="w-96 m-6 p-2 border-2 border-solid text-center">
           <thead>
             <tr className="flex flex-col">

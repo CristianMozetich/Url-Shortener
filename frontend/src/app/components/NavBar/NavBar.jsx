@@ -15,7 +15,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <div className="flex justify-between h-12 items-center fixed w-full bg-teal-700 text-white shadow-md shadow-slate-400">
+      <div className="flex top-0 justify-between h-12 items-center fixed w-full bg-teal-700 text-white shadow-md shadow-slate-400">
         <div className="flex">
           <Link
             href={"/"}
@@ -33,24 +33,24 @@ const NavBar = () => {
         <div className="mr-8 hidden md:block">
           <Link
             href={"/pages/urls"}
-            className="text-md m-2 hover:text-sky-950 font-bold transition-all tracking-wider"
+            className="text-md m-2 hover:text-sky-950 transition-all tracking-wider"
           >
             Urls
           </Link>
           <Link
-            className="text-md m-2 hover:text-sky-950 font-bold transition-all tracking-wider"
+            className="text-md m-2 hover:text-sky-950 transition-all tracking-wider"
             href={"/pages/prices"}
           >
             Precios
           </Link>
           <Link
-            className="text-md m-2 hover:text-sky-950 font-bold transition-all tracking-wider"
+            className="text-md m-2 hover:text-sky-950 transition-all tracking-wider"
             href={"/pages/login"}
           >
             Login
           </Link>
           <Link
-            className="text-md m-2 hover:text-sky-950 font-bold transition-all tracking-wider"
+            className="text-md m-2 hover:text-sky-950 transition-all tracking-wider"
             href={"/pages/registro"}
           >
             Registro
@@ -71,7 +71,7 @@ const NavBar = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className="w-1/2 z-10 h-screen fixed mt-12 right-0 bg-teal-700">
+        <div className="w-1/2 z-10 h-screen top-0 fixed mt-12 right-0 bg-teal-700">
           <div className="mr-8 flex flex-col items-end">
             <Link
               className="text-lg m-2 hover:text-sky-950 text-white transition-all hover:-translate-x-1 tracking-wider font-bold"
