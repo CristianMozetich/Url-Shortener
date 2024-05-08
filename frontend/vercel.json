@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "frontend/src/app/layout.tsx",
+        "use": "@vercel/node"
+      }
+    ]
+  }
+  
