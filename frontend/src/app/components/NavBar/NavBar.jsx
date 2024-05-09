@@ -2,10 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import MenuHamburguesa from "../icons/menuHamburguesa";
+import MenuHamburguesa from "../icons/MenuHamburguesa";
 import ExitMenu from "../icons/ExitMenu";
 import { useState } from "react";
-import { button } from "@nextui-org/react";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -59,12 +58,12 @@ const NavBar = () => {
         <div className="block md:hidden mr-8">
           {menuOpen ? (
             <button className="flex items-center" onClick={toggleMenu}>
-              <ExitMenu />{" "}
+              <ExitMenu />
               {/* Renderiza el ícono de salida cuando el menú está abierto */}
             </button>
           ) : (
             <button className="flex items-center" onClick={toggleMenu}>
-              <MenuHamburguesa />{" "}
+              <MenuHamburguesa />
               {/* Renderiza el ícono del menú hamburguesa cuando está cerrado */}
             </button>
           )}
