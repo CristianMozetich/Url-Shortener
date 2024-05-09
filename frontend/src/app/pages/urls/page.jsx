@@ -12,7 +12,7 @@ export default function Urls() {
 
     try {
       const customUrls = await fetch(
-        `https://simple-link-five.vercel.app/urls/${userId}`,
+        `https://simple-link-back.vercel.app/urls/${userId}`,
         {
           method: "GET",
           headers: {

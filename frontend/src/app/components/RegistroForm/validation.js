@@ -16,7 +16,7 @@ export const ValidationForm = () => {
     }
 
     const response = await fetch(
-      "https://simple-link-five.vercel.app/sessions/register",
+      "https://simple-link-back.vercel.app/sessions/register",
       {
         method: "POST",
         headers: {
