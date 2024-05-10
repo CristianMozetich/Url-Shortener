@@ -25,7 +25,7 @@ export default function CustomUrl() {
 
     try {
       const response = await fetch(
-        `https://simple-link-back.vercel.app/custom`,
+        `https://url-shortener-server-five.vercel.app/custom`,
         {
           method: "POST",
           headers: {
@@ -85,9 +85,9 @@ export default function CustomUrl() {
         {customUrl && (
           <Link
             className="text-blue-500 hover:text-blue-800 cursor-pointer font-bold text-2xl"
-            href={`https://simple-link-back.vercel.app/${customUrl}`}
+            href={`https://url-shortener-server-five.vercel.app/${customUrl}`}
           >
-            https://simple-link-back.vercel.app/{customUrl}
+            https://url-shortener-server-five.vercel.app/{customUrl}
           </Link>
         )}
       </div>

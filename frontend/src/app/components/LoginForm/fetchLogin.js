@@ -13,7 +13,7 @@ export const FetchLogin = () => {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
     const response = await fetch(
-      "https://simple-link-back.vercel.app/sessions/login",
+      "https://url-shortener-server-five.vercel.app/sessions/login",
       {
         method: "POST",
         headers: {
