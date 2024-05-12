@@ -9,7 +9,7 @@ const RegistroForm = () => {
   const { handleSubmit, usuarioCreado, errorPassword } = ValidationForm();
 
   return (
-    <div>
+    <div className="md:w-1/2 w-full flex flex-col items-center justify-center">
       <div className="flex justify-center m-4 p-2">
         <picture>
           <Image
@@ -26,37 +26,37 @@ const RegistroForm = () => {
         className="flex flex-col items-center justify-center m-2"
       >
         <input
-          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
+          className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Nombre y Apellido(*)"
           name="username"
         />
         <input
-          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
+          className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Email(*)"
           name="email"
         />
         <input
-          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
+          className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Contraseña(*)"
           name="password"
         />
         <input
-          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
+          className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Repetir Contraseña(*)"
           name="repeatPassword"
         />
         <input
-          className="w-72 m-2 h-12 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
+          className="max-w-72 m-2 h-12 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Telefono(*)"
           name="phone"
         />
         <input
-          className="w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
+          className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Domicilio(*)"
           name="address"

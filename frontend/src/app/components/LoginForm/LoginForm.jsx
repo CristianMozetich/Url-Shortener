@@ -8,7 +8,7 @@ const LoginForm = () => {
   const { handlesubmit } = FetchLogin();
 
   return (
-    <div>
+    <div className="md:w-1/2 w-full flex flex-col items-center justify-center">
       <div className="flex justify-center m-4 p-2">
         <picture>
           <Image
@@ -21,13 +21,13 @@ const LoginForm = () => {
       </div>
       <form onSubmit={handlesubmit} className="flex flex-col items-center justify-center">
         <input
-          className="w-72 px-4  h-12 m-2 p-2 border-2 shadow-md border-solid border-green-200 rounded-lg"
+          className="max-w-72 px-4 h-12 m-2 p-2 border-2 shadow-md border-solid border-green-200 rounded-lg"
           type="text"
           placeholder="Email (*)"
           name="email"
         />
         <input
-          className="w-72 px-4 h-12 m-2 p-2 shadow-md border-2 border-solid border-green-200 rounded-lg"
+          className="max-w-72 px-4 h-12 m-2 p-2 shadow-md border-2 border-solid border-green-200 rounded-lg"
           type="text"
           placeholder="Contraseña (*)"
           name="password"
