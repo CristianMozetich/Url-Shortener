@@ -17,9 +17,9 @@ export default function Prices() {
         <h1 className="text-center text-6xl font-bolder">Planes</h1>
       </div>
       <div className="flex justify-center flex-wrap">
-        <table className="w-96 m-6 p-2 border-2 border-solid text-center">
+        <table className="max-w-96 m-6 border-2 border-solid text-center shadow-md shadow-blue-900">
           <thead>
-            <tr className="flex flex-col">
+            <tr className="flex flex-col m-3 p-3">
               <td className="text-center text-2xl font-bold">Gratis</td>
               <td className="text-center text-6xl font-bold text-blue-800">
                 0 Є
@@ -28,41 +28,41 @@ export default function Prices() {
           </thead>
           <tbody className="text-start">
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
               <td className="text-center">
-                <button className="p-3 m-3 bg-blue-500 text-white rounded-lg">
+                <button className="p-3 m-4 bg-blue-500 text-white rounded-lg">
                   Suscribirse
                 </button>
               </td>
             </tr>
           </tbody>
         </table>
-        <table className="w-96 m-6 p-2 border-2 border-solid shadow-lg shadow-blue-900 text-center">
+        <table className="max-w-96 m-6 p-2 border-2 border-solid shadow-lg shadow-blue-900 text-center">
           <thead>
-            <tr className="flex flex-col">
+            <tr className="flex flex-col m-3 p-3">
               <td className="text-center text-2xl font-bold">Básico</td>
               <td className="text-center text-6xl font-bold text-blue-800">
                 2 Є
@@ -71,34 +71,34 @@ export default function Prices() {
           </thead>
           <tbody className="text-start">
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces personalizados</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces personalizados</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
-              <td className="p-3">Enlaces por mes</td>
-              <td>Infinitos</td>
+              <td className="p-4">Enlaces por mes</td>
+              <td className="p-4">Infinitos</td>
             </tr>
             <tr>
               <td className="text-center">
                 <button
                   onClick={onClick}
-                  className="p-3 m-3 bg-blue-500 text-white rounded-lg"
+                  className="p-3 m-4 bg-blue-500 text-white rounded-lg"
                 >
                   Suscribirse
                 </button>
