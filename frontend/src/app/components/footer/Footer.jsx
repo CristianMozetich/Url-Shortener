@@ -21,7 +21,7 @@ const Footer = () => {
       </div>
       <div className="flex items-center flex-col p-6">
         <span className="text-sm">Todos los derechos reservados</span>
-        <span>Desarrollado por <Link target="_blank" className="text-slate-300" href={"https://github.com/CristianMozetich"}>Cristian Mozetich.</Link></span>
+        <span>Desarrollado por <Link target="_blank" className="text-sky-300" href={"https://github.com/CristianMozetich"}>Cristian Mozetich.</Link></span>
       </div>
     </footer>
   );

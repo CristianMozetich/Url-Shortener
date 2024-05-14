@@ -12,7 +12,7 @@ export default function Urls() {
 
     try {
       const customUrls = await fetch(
-        `https://url-shortener-server-five.vercel.app/urls/${userId}`,
+        `https://url-simple.vercel.app/urls/${userId}`,
         {
           method: "GET",
           headers: {
