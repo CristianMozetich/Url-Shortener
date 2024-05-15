@@ -14,7 +14,7 @@ app.use(express.json());
 
 //MIDDLEWARE CORS
 app.use(cors({
-    origin: 'https://simple-url-sable.vercel.app', // Reemplaza esto con la URL de tu aplicación frontend
+    origin: 'https://simple-url-sable.vercel.app, http://localhost:3000', // Reemplaza esto con la URL de tu aplicación frontend
     methods: ['GET', 'POST'], // Métodos permitidos
     allowedHeaders: ['Content-Type'], // Encabezados permitidos
   }));
