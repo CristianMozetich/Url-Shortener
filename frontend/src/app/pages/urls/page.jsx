@@ -41,10 +41,8 @@ export default function Urls() {
         <ul>
           {urls.map((item) => (
             <li className="m-2 p-1" key={item._id}>
-              <span>
-                <a className="text-lg" href={item.url}>
-                  {item.shortUrl}
-                </a>
+              <span className="text-lg" href={item.url}>
+                {item.shortUrl}
               </span>
             </li>
           ))}
