@@ -28,6 +28,29 @@ export default function Urls() {
     }
   };
 
+  const removeUrl = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        `https://url-simple.vercel.app/urls/${userId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ shortUrl }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Error al eliminar la URL");
+      }
+      setUrls(urls.filter((url) => url.data.shortUrl !== shortUrl));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="h-screen flex flex-col items-center">
       <h1 className="text-3xl mt-20 font-bold">Accede a tus URLs</h1>
@@ -38,12 +61,33 @@ export default function Urls() {
         >
           Mis Urls
         </button>
-        <ul>
+        <ul className="border-gray-400 rounded-lg overflow-hidden shadow-lg">
           {urls.map((item) => (
-            <li className="m-2 p-1" key={item._id}>
-              <span className="text-lg" href={item.url}>
-                {item.shortUrl}
+            <li
+              className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-200 flex items-center justify-between"
+              key={item._id}
+            >
+              <span className="text-lg text-white" href={item.url}>
+                https://url-simple.vercel.app/{item.shortUrl}
               </span>
+              <button
+                className="text-white hover:text-gray-200 focus:outline-none"
+                onClick={removeUrl}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
             </li>
           ))}
         </ul>
