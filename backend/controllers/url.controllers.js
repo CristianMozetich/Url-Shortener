@@ -73,3 +73,23 @@ export const getUrls = async (req, res) => {
     res.status(500).send({ error: error.message });
   }
 };
+
+export const deleteUrl = async (req, res) => {
+  const { shortUrl } = req.body;
+
+  try {
+    const urlToDelete = await UrlModel.findOne({ shortUrl });
+
+    if (!urlToDelete) {
+      return res.status(404).send({ error: "URL no encontrada" });
+    }
+
+    await urlToDelete.remove();
+
+    res.status(200).send({ message: "URL eliminada correctamente" });
+  } catch (error) {
+    console.error("Error al eliminar la URL:", error);
+    res.status(500).send({ error: "Error interno del servidor" });
+  }
+};
+
