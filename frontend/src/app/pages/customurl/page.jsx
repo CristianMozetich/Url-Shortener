@@ -72,7 +72,7 @@ export default function CustomUrl() {
           type="text"
           placeholder="NOMBRE DEL ENLACE"
         />
-        <button className="m-2 p-1 bg-blue-500 text-white rounded-lg w-36">
+        <button className="m-2 p-1 bg-blue-500 text-white rounded-lg w-36 hover:bg-blue-700 transition-all">
           CORTAR
         </button>
       </form>

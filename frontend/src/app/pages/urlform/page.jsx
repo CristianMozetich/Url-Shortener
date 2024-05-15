@@ -42,7 +42,7 @@ export default function UrlForm() {
           type="text"
           placeholder="ENLACE"
         />
-        <button className="m-2 p-1 bg-blue-500 text-white rounded-lg w-36">
+        <button className="m-2 p-1 bg-blue-500 text-white rounded-lg w-36  transition-all hover:bg-blue-700">
           CORTAR
         </button>
       </form>
