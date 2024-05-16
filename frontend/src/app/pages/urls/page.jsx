@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { context } from "@/app/context/ContextProvider";
 import { useContext } from "react";
+import Link from "next/link";
 
 export default function Urls() {
   const [urls, setUrls] = useState([]);
@@ -67,12 +68,16 @@ export default function Urls() {
               className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-200 flex items-center justify-between"
               key={item._id}
             >
-              <span className="text-lg text-white" href={item.url}>
-                https://url-simple.vercel.app/{item.shortUrl}
-              </span>
+              <Link
+                target="_blank"
+                className="text-lg text-slate-800"
+                href={item.url}
+              >
+                {item.shortUrl}
+              </Link>
               <button
-                className="text-white hover:text-gray-200 focus:outline-none"
-                onClick={removeUrl}
+                className="text-white hover:text-gray-200 focus:outline-none m-4 p-2"
+                onClick={() => removeUrl(item.shortUrl)}
               >
                 <svg
                   className="w-6 h-6"
@@ -90,6 +95,37 @@ export default function Urls() {
               </button>
             </li>
           ))}
+        </ul>
+        <ul className="border-gray-400 rounded-lg overflow-hidden shadow-lg">
+          <li
+            className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-200 flex items-center justify-between"
+          >
+            <Link
+              target="_blank"
+              className="text-lg text-slate-700"
+              href={"https://url-simple.vercel.app/"}
+            >
+              https://url-simple.vercel.app/
+            </Link>
+            <button
+              className="text-slate-700 focus:outline-none m-4 p-2"
+              onClick={removeUrl}
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </li>
         </ul>
       </form>
     </div>
