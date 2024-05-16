@@ -1,3 +1,4 @@
+import { error } from "console";
 import { UrlModel } from "../models/url.models.js";
 import { UserModel } from "../models/user.models.js";
 
@@ -76,15 +77,25 @@ export const getUrls = async (req, res) => {
 
 export const deleteUrl = async (req, res) => {
   const { shortUrl } = req.body;
+  const { userId } = req.params;
 
   try {
-    const urlToDelete = await UrlModel.findOne({ shortUrl });
 
+    const user = await UserModel.findById(userId);
+    if(!user){
+      return res.status(404).send({ error: "Usuario no encontrado" });
+    }
+
+
+    const urlToDelete = await UrlModel.findOne({ shortUrl });
     if (!urlToDelete) {
       return res.status(404).send({ error: "URL no encontrada" });
     }
 
-    await urlToDelete.remove();
+    await UrlModel.deleteOne({ shortUrl });
+
+    user.shortenedUrls = user.shortenedUrls.filter((url)=> url.shortUrl !== shortUrl);
+    await user.save();
 
     res.status(200).send({ message: "URL eliminada correctamente" });
   } catch (error) {
