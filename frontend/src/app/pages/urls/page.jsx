@@ -29,26 +29,24 @@ export default function Urls() {
     }
   };
 
-  const removeUrl = async (e) => {
-    e.preventDefault();
+  const removeUrl = async (id) => {
     try {
-      const response = await fetch(
-        `https://url-simple.vercel.app/urls/${userId}`,
+      const response =
+        await (`https://url-simple.vercel.app/urls/${userId}/${id}`,
         {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ shortUrl }),
-        }
-      );
+        });
 
       if (!response.ok) {
-        throw new Error("Error al eliminar la URL");
+        throw new Error("Error al eliminar la url");
       }
-      setUrls(urls.filter((url) => url.data.shortUrl !== shortUrl));
-    } catch (error) {
-      console.log(error);
+
+      setUrls(urls.filter((url) => url._id !== urls.data._id));
+    } catch {
+      console.error("Error al eliminar la url");
     }
   };
 
@@ -76,8 +74,8 @@ export default function Urls() {
                 {item.shortUrl}
               </Link>
               <button
+                onClick={() => removeUrl(item._id)}
                 className="text-white hover:text-gray-200 focus:outline-none m-4 p-2"
-                onClick={() => removeUrl(item.shortUrl)}
               >
                 <svg
                   className="w-6 h-6"
@@ -95,37 +93,6 @@ export default function Urls() {
               </button>
             </li>
           ))}
-        </ul>
-        <ul className="border-gray-400 rounded-lg overflow-hidden shadow-lg">
-          <li
-            className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-200 flex items-center justify-between"
-          >
-            <Link
-              target="_blank"
-              className="text-lg text-slate-700"
-              href={"https://url-simple.vercel.app/"}
-            >
-              https://url-simple.vercel.app/
-            </Link>
-            <button
-              className="text-slate-700 focus:outline-none m-4 p-2"
-              onClick={removeUrl}
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </li>
         </ul>
       </form>
     </div>
