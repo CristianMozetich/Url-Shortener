@@ -7,6 +7,6 @@ urlRouter.post('/', urlShortener)
 urlRouter.get('/:shortId', getUrlShort)
 urlRouter.post('/custom', customUrlShortener)
 urlRouter.get('/urls/:userId', getUrls)
-urlRouter.delete('/urls/:userId', deleteUrl)
+urlRouter.delete('/urls/:userId/:id', deleteUrl)
 
 export default urlRouter

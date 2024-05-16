@@ -63,7 +63,7 @@ export const getUrls = async (req, res) => {
   try {
     const user = await UserModel.findById(userId);
 
-    if(!user){
+    if (!user) {
       return res.status(404).send({ error: "Usuario no encontrado" });
     }
 
@@ -76,31 +76,27 @@ export const getUrls = async (req, res) => {
 };
 
 export const deleteUrl = async (req, res) => {
-  const { shortUrl } = req.body;
+  const { id } = req.params;
   const { userId } = req.params;
 
   try {
-
     const user = await UserModel.findById(userId);
-    if(!user){
+    if (!user) {
       return res.status(404).send({ error: "Usuario no encontrado" });
     }
 
-
-    const urlToDelete = await UrlModel.findOne({ shortUrl });
+    const urlToDelete = await UrlModel.findByIdAndDelete(id);
     if (!urlToDelete) {
-      return res.status(404).send({ error: "URL no encontrada" });
+      return res.status(404).send({ error: "Url no encontrada" });
     }
 
-    await UrlModel.deleteOne({ shortUrl });
-
-    user.shortenedUrls = user.shortenedUrls.filter((url)=> url.shortUrl !== shortUrl);
+    user.shortenedUrls = user.shortenedUrls.filter(
+      (url) => url._id.toString() !== id
+    );
     await user.save();
 
-    res.status(200).send({ message: "URL eliminada correctamente" });
-  } catch (error) {
-    console.error("Error al eliminar la URL:", error);
-    res.status(500).send({ error: "Error interno del servidor" });
+    res.status(200).send({ data: urlToDelete });
+  } catch {
+    res.status(500).send({ error: error.message });
   }
 };
-
