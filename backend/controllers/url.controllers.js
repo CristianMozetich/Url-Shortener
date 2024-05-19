@@ -96,7 +96,7 @@ export const deleteUrl = async (req, res) => {
     await user.save();
 
     res.status(200).send({ data: urlToDelete });
-  } catch {
+  } catch (error) {
     res.status(500).send({ error: error.message });
   }
 };
