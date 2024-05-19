@@ -63,7 +63,7 @@ export default function Urls() {
         <ul className="border-gray-400 rounded-lg overflow-hidden shadow-lg">
           {urls.map((item) => (
             <li
-              className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-200 flex items-center justify-between"
+              className="px-4 py-2 bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-between"
               key={item._id}
             >
               <Link
@@ -79,7 +79,7 @@ export default function Urls() {
               >
                 <svg
                   className="w-6 h-6"
-                  fill="current"
+                  fill="none"
                   viewBox="0 0 24 24"
                 >
                   <path
