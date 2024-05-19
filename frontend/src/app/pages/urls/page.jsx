@@ -79,7 +79,7 @@ export default function Urls() {
               >
                 <svg
                   className="w-6 h-6"
-                  fill="bg-slate-800"
+                  fill="current"
                   viewBox="0 0 24 24"
                 >
                   <path
