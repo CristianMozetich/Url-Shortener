@@ -1,4 +1,3 @@
-import { error } from "console";
 import { UrlModel } from "../models/url.models.js";
 import { UserModel } from "../models/user.models.js";
 
