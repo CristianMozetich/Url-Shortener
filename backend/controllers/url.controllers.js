@@ -90,11 +90,11 @@ export const deleteUrl = async (req, res) => {
     }
 
     user.shortenedUrls = user.shortenedUrls.filter(
-      (url) => url._id.toString() !== id
+      (url) => url._id.toString() !== urlToDelete._id.toString()
     );
     await user.save();
 
-    res.status(200).send({ data: urlToDelete });
+    res.status(200).send({ data: "Url eliminada" });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
