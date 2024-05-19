@@ -89,10 +89,17 @@ export const deleteUrl = async (req, res) => {
       return res.status(404).send({ error: "Url no encontrada" });
     }
 
+    // Eliminar la URL de la lista de URLs del usuario
+    const initialLength = user.shortenedUrls.length;
     user.shortenedUrls = user.shortenedUrls.filter(
-      (url) => url._id.toString() !== urlToDelete._id.toString()
+      (url) => url._id.toString() !== id
     );
-    await user.save();
+    const finalLength = user.shortenedUrls.length;
+
+    // Verificar si la URL realmente se eliminó
+    if (initialLength === finalLength) {
+      return res.status(404).send({ error: "Url no encontrada en el usuario" });
+    }
 
     res.status(200).send({ data: "Url eliminada" });
   } catch (error) {
