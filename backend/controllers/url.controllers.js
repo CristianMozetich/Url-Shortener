@@ -101,6 +101,8 @@ export const deleteUrl = async (req, res) => {
       return res.status(404).send({ error: "Url no encontrada en el usuario" });
     }
 
+    await user.save();
+    
     res.status(200).send({ data: "Url eliminada" });
   } catch (error) {
     res.status(500).send({ error: error.message });
