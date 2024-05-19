@@ -44,7 +44,7 @@ export default function Urls() {
         throw new Error("Error al eliminar la url");
       }
 
-      setUrls(urls.filter((url) => url.data._id !== id));
+      setUrls(urls.filter((url) => url._id !== id));
     } catch {
       console.error("Error al eliminar la url");
     }
@@ -79,9 +79,8 @@ export default function Urls() {
               >
                 <svg
                   className="w-6 h-6"
-                  fill="currentColor"
+                  fill="bg-slate-800"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
                 >
                   <path
                     strokeLinecap="round"
