@@ -1,5 +1,5 @@
 import { useState, useCallback, useContext } from "react";
-import context from "@/app/context/ContextProvider";
+import { context } from "@/app/context/ContextProvider";
 
 export const GetAndDelete = () => {
   const { userId } = useContext(context);
