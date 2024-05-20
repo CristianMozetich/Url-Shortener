@@ -1,57 +1,9 @@
 "use client";
-import { useState, useContext, useCallback } from "react";
-import { context } from "@/app/context/ContextProvider";
+import { GetAndDelete } from "./fetchUrls";
 import Link from "next/link";
 
 export default function Urls() {
-  const [urls, setUrls] = useState([]);
-  const { userId } = useContext(context);
-
-  const fetchUrls = useCallback(async () => {
-    try {
-      const response = await fetch(`https://url-simple.vercel.app/urls/${userId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Error al obtener las URLs");
-      }
-
-      const customUrls = await response.json();
-
-      if (customUrls && customUrls.data) {
-        setUrls(customUrls.data);
-      } else {
-        console.log("No se recibieron datos de la API");
-      }
-    } catch (error) {
-      console.log("Error al obtener las URLs:", error);
-    }
-  }, [userId]);
-
-
-  const removeUrl = useCallback(async (id) => {
-    try {
-      const response = await fetch(`https://url-simple.vercel.app/urls/${userId}/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Error al eliminar la URL");
-      }
-
-      setUrls((prevUrls) => prevUrls.filter((url) => url._id !== id));
-      console.log(`URL con ID: ${id} eliminada exitosamente`);
-    } catch (error) {
-      console.error("Error al eliminar la URL:", error);
-    }
-  }, [userId]);
+ const { urls, fetchUrls, removeUrl } = GetAndDelete();
 
   return (
     <div className="h-screen flex flex-col items-center">
