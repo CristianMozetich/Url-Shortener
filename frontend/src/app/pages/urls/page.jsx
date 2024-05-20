@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { context } from "@/app/context/ContextProvider";
 import { useContext } from "react";
 import Link from "next/link";
@@ -8,9 +8,12 @@ export default function Urls() {
   const [urls, setUrls] = useState([]);
   const { userId } = useContext(context);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  useEffect(() => {
+    if(userId){
+      fetchUrls();
+    }
+  })
+  const fetchUrls = async () => {
     try {
       const customUrls = await fetch(
         `https://url-simple.vercel.app/urls/${userId}`,
@@ -22,13 +25,21 @@ export default function Urls() {
         }
       ).then((res) => res.json());
 
-      // Actualizar el estado con los datos recibidos
-      setUrls(customUrls.data);
+      if (customUrls && customUrls.data) {
+        setUrls(customUrls.data);
+      } else {
+        console.log("No se recibieron datos de la API");
+      }
     } catch (error) {
-      console.log(error);
+      console.log("Error al obtener las URLs:", error);
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    fetchUrls();
+  }
+  
   const removeUrl = async (id) => {
     try {
       const response =
