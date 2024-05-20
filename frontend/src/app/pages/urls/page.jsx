@@ -74,7 +74,7 @@ export default function Urls() {
                 {item.shortUrl}
               </Link>
               <button
-                onClick={() => removeUrl(item._id)}
+                onClick={removeUrl(item._id)}
                 className="text-white hover:text-gray-200 focus:outline-none m-4 p-2"
               >
                 <svg
