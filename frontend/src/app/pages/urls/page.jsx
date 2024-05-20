@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useContext, useCallback } from "react";
+import { useState, useContext, useCallback } from "react";
 import { context } from "@/app/context/ContextProvider";
 import Link from "next/link";
 
@@ -32,11 +32,6 @@ export default function Urls() {
     }
   }, [userId]);
 
-  useEffect(() => {
-    if (userId) {
-      fetchUrls();
-    }
-  }, [userId, fetchUrls]);
 
   const removeUrl = useCallback(async (id) => {
     try {
