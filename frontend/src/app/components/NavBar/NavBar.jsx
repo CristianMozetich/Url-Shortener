@@ -14,7 +14,7 @@ const NavBar = () => {
   };
   return (
     <>
-      <div className="flex top-0 justify-between h-12 items-center fixed w-full bg-teal-700 text-white shadow-md shadow-slate-400">
+      <div className="flex z-10 top-0 justify-between h-12 items-center fixed w-full bg-teal-700 text-white shadow-md shadow-slate-400">
         <div className="flex">
           <Link
             href={"/"}
