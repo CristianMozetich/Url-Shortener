@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const LoginForm = () => {
-  const { handlesubmit } = FetchLogin();
+  const { handlesubmit, errorLogin } = FetchLogin();
 
   return (
     <div className="md:w-1/2 w-full flex flex-col items-center justify-center">
@@ -19,7 +19,10 @@ const LoginForm = () => {
           />
         </picture>
       </div>
-      <form onSubmit={handlesubmit} className="flex flex-col items-center justify-center">
+      <form
+        onSubmit={handlesubmit}
+        className="flex flex-col items-center justify-center"
+      >
         <input
           className="max-w-72 px-4 h-12 m-2 p-2 border-2 shadow-md border-solid border-green-200 rounded-lg"
           type="text"
@@ -38,7 +41,13 @@ const LoginForm = () => {
         >
           Iniciar Sesion
         </button>
-        <Link className="text-center text-blue-800 m-2" href={"/pages/registro"}>Todavia no tienes cuenta? Haz click aqui!</Link>
+        <span className="text-red-500">{errorLogin}</span>
+        <Link
+          className="text-center text-blue-800 m-2"
+          href={"/pages/registro"}
+        >
+          Todavia no tienes cuenta? Haz click aqui!
+        </Link>
       </form>
     </div>
   );

@@ -6,7 +6,19 @@ import Image from "next/image";
 
 const RegistroForm = () => {
   const formRef = useRef(null);
-  const { handleSubmit, usuarioCreado, errorPassword } = ValidationForm();
+  const {
+    handleSubmit,
+    usuarioCreado,
+    errorPassword,
+    errorName,
+    validateName,
+    validateEmail,
+    errorEmail,
+    validatePhone,
+    errorPhone,
+    validateAddress,
+    errorAddress,
+  } = ValidationForm();
 
   return (
     <div className="md:w-1/2 w-full flex flex-col items-center justify-center">
@@ -30,13 +42,18 @@ const RegistroForm = () => {
           type="text"
           placeholder="Nombre y Apellido(*)"
           name="username"
+          onBlur={validateName}
         />
+        <span className="text-red-500">{errorName}</span>
+
         <input
           className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Email(*)"
           name="email"
+          onBlur={validateEmail}
         />
+        <span className="text-red-500">{errorEmail}</span>
         <input
           className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
@@ -54,13 +71,17 @@ const RegistroForm = () => {
           type="text"
           placeholder="Telefono(*)"
           name="phone"
+          onBlur={validatePhone}
         />
+        <span className="text-red-500">{errorPhone}</span>
         <input
           className="max-w-72 h-12 m-2 px-4 p-2 border-2 border-solid border-blue-200 rounded-md shadow-lg"
           type="text"
           placeholder="Domicilio(*)"
           name="address"
+          onBlur={validateAddress}
         />
+        <span className="text-red-500">{errorAddress}</span>
         <button
           type="submit"
           className="m-2 p-1 bg-blue-500 text-white rounded-lg w-32 h-9 hover:bg-blue-900 transition-all"
